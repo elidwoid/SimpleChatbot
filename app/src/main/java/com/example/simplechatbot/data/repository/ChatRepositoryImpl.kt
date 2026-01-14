@@ -11,7 +11,7 @@ class ChatRepositoryImpl(
 
     private val  history = mutableListOf<ChatMessage>()
 
-    override suspend fun sendMessage(userText: String): String {
+    override suspend fun sendMessage( userText: String): String {
         history += ChatMessage(Role.USER,userText)
 
         val reply = dataSource.send(userText)
